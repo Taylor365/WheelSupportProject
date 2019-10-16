@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Wheel of Support</title>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 10px;
+            padding: 10px;
+
+        }
+        
+        .grid-container > div {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        .item1 {
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+        .button{
+            font-size: 30px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="item1">
+            <h1>Wheel of Support</h1>
+            <h3>Select Random Engineers</h3>
+        </div>
+        <div class="item2">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Shift Count</th>
+                    <th>Last Worked</th>
+                </tr>
+                <tbody id="engineers"></tbody>
+            </table>
+        </div>
+        <div class="item3">
+            <form action="javascript:void(0);" onsubmit="selectRandomEngineers()">
+                Select Date: <input type="date" id="dayOfWork">
+                <input type="submit" class="button" value="Select">
+            </form>
+        </div>
+        <div class="item4">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tbody id="randomEngineers"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="site.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getEngineers();
+    </script>
+</body>
+</html>
